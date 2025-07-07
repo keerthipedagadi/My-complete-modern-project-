@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Complete Modern Project</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6f9;
+    color: #333;
+  }
+  header {
+    background: linear-gradient(90deg, #1d2b64, #f8cdda);
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+  }
+  nav {
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  nav button {
+    background: #1d2b64;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    margin: 8px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  nav button:hover {
+    background: #162050;
+  }
+  .page {
+    display: none;
+    padding: 25px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  .active {
+    display: block;
+  }
+  /* Portfolio */
+  .about-me {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .skill {
+    background: #1d2b64;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  .project-card {
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  /* To-Do List */
+  .todo-inputs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+  .todo-inputs input, .todo-inputs select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    flex: 1;
+  }
+  #todo-list li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .priority {
+    padding: 3px 8px;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+    font-size: 12px;
+  }
+  .high { background: #e74c3c; }
+  .medium { background: #f1c40f; }
+  .low { background: #2ecc71; }
+  #todo-list button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  #todo-list button:hover {
+    background: #c0392b;
+  }
+  /* Product Listing */
+  .filters {
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .filters select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  .product {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    width: calc(25% - 20px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    float: left;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  .product img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .product:hover {
+    transform: translateY(-5px);
+  }
+  @media (max-width: 900px) {
+    .product { width: calc(50% - 20px); }
+  }
+  @media (max-width: 600px) {
+    .product { width: 100%; }
+  }
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #777;
+    clear: both;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>My Complete Modern Project</h1>
+</header>
+
+<nav>
+  <button onclick="showPage('portfolio')">Portfolio</button>
+  <button onclick="showPage('todo')">To-Do List</button>
+  <button onclick="showPage('products')">Product Listing</button>
+</nav>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="page active">
+  <div class="about-me">
+    <h2>About Me</h2>
+    <p>Hi, I'm Jane Doe, a passionate Front-End Web Developer with expertise in HTML, CSS, JavaScript, and modern UI design.</p>
+    <h3>Skills</h3>
+    <div class="skills">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">UI/UX</div>
+      <div class="skill">Git & GitHub</div>
+    </div>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="project-card">
+    <h3>Portfolio Website</h3>
+    <p>A clean, responsive website showcasing my skills and projects.</p>
+  </div>
+  <div class="project-card">
+    <h3>Advanced To-Do List</h3>
+    <p>A task manager with priority and date features using localStorage.</p>
+  </div>
+  <div class="project-card">
+    <h3>Product Listing Page</h3>
+    <p>An interactive product catalog with filters, sorting, and modern UI.</p>
+  </div>
+
+  <h2>Contact</h2>
+  <p>Email: jane.doe@example.com | LinkedIn: linkedin.com/in/janedoe</p>
+</section>
+
+<!-- To-Do List Section -->
+<section id="todo" class="page">
+  <h2>To-Do List with Priority</h2>
+  <div class="todo-inputs">
+    <input type="text" id="todo-input" placeholder="Task description">
+    <input type="date" id="todo-date">
+    <select id="todo-priority">
+      <option value="high">High Priority</option>
+      <option value="medium">Medium Priority</option>
+      <option value="low">Low Priority</option>
+    </select>
+    <button onclick="addTodo()">Add</button>
+  </div>
+  <ul id="todo-list"></ul>
+</section>
+
+<!-- Product Listing Section -->
+<section id="products" class="page">
+  <h2>Product Listing</h2>
+  <div class="filters">
+    <select id="category-filter" onchange="filterProducts()">
+      <option value="all">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <option value="home">Home</option>
+    </select>
+    <select id="sort-filter" onchange="sortProducts()">
+      <option value="default">Sort By</option>
+      <option value="price-asc">Price Low to High</option>
+      <option value="price-desc">Price High to Low</option>
+      <option value="rating">Highest Rated</option>
+    </select>
+  </div>
+  <div id="product-list" style="clear:both;"></div>
+</section>
+
+<footer>
+  &copy; 2025 Jane Doe. All rights reserved.
+</footer>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+// To-Do List with Priority & Date
+let todos = JSON.parse(localStorage.getItem('todos')) || [];
+const todoList = document.getElementById('todo-list');
+
+function renderTodos() {
+  todoList.innerHTML = '';
+  todos.forEach((todo, index) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <div>
+        ${todo.text} 
+        <span class="priority ${todo.priority}">${todo.priority.toUpperCase()}</span>
+        <br><small>Due: ${todo.date}</small>
+      </div>
+      <button onclick="deleteTodo(${index})">Delete</button>
+    `;
+    todoList.appendChild(li);
+  });
+}
+
+function addTodo() {
+  const text = document.getElementById('todo-input').value.trim();
+  const date = document.getElementById('todo-date').value;
+  const priority = document.getElementById('todo-priority').value;
+  if (text && date) {
+    todos.push({ text, date, priority });
+    localStorage.setItem('todos', JSON.stringify(todos));
+    document.getElementById('todo-input').value = '';
+    renderTodos();
+  }
+}
+
+function deleteTodo(index) {
+  todos.splice(index, 1);
+  localStorage.setItem('todos', JSON.stringify(todos));
+  renderTodos();
+}
+renderTodos();
+
+// Product Listing
+const products = [
+  { name: 'Smartphone', category: 'electronics', price: 300, rating: 4.5, img: 'https://via.placeholder.com/200x150' },
+  { name: 'Laptop', category: 'electronics', price: 800, rating: 4.7, img: 'https://via.placeholder.com/200x150' },
+  { name: 'Jeans', category: 'clothing', price: 50, rating: 4.0, img: 'https://via.placeholder.com/200x150' },
+  { name: 'T-Shirt', category: 'clothing', price: 20, rating: 4.2, img: 'https://via.placeholder.com/200x150' },
+  { name: 'Sofa', category: 'home', price: 500, rating: 4.6, img: 'https://via.placeholder.com/200x150' }
+];
+
+function displayProducts(filtered) {
+  const productList = document.getElementById('product-list');
+  productList.innerHTML = '';
+  filtered.forEach(p => {
+    const div = document.createElement('div');
+    div.className = 'product';
+    div.innerHTML = `<img src="${p.img}">
+                     <h4>${p.name}</h4>
+                     <p>Category: ${p.category}</p>
+                     <p>Price: $${p.price}</p>
+                     <p>Rating: ${p.rating}⭐</p>`;
+    productList.appendChild(div);
+  });
+}
+
+function filterProducts() {
+  const category = document.getElementById('category-filter').value;
+  let filtered = [...products];
+  if (category !== 'all') {
+    filtered = filtered.filter(p => p.category === category);
+  }
+  displayProducts(filtered);
+}
+
+function sortProducts() {
+  const sort = document.getElementById('sort-filter').value;
+  let sorted = [...products];
+  if (sort === 'price-asc') sorted.sort((a, b) => a.price - b.price);
+  else if (sort === 'price-desc') sorted.sort((a, b) => b.price - a.price);
+  else if (sort === 'rating') sorted.sort((a, b) => b.rating - a.rating);
+  displayProducts(sorted);
+}
+
+displayProducts(products);
+</script>
+
+</body>
+</html>
